@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EZZE Concept</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Flaticon CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css"
+    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/back-to-top.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <a href="index.html" class="logo-link">
+              <img
+                src="assets/logos/1(1)(1).png"
+                alt="EZZE Concept Logo"
+                class="logo-img"
+              />
+            </a>
+          </div>
+          <nav class="main-nav">
+            <ul>
+              <li class="active">
+                <a href="index.html"> Home</a>
+              </li>
+              <li>
+                <a href="about.html"> About Us</a>
+              </li>
+              <li>
+                <a href="properties.html"
+                  > Properties</a
+                >
+              </li>
+              <li>
+                <a href="services.html"
+                  > Services</a
+                >
+              </li>
+              <li>
+                <a href="partners.html"
+                  > Partners</a
+                >
+              </li>
+              <li>
+                <a href="contact.html"
+                  > Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section with Video Background -->
+    <section id="hero" class="hero-section">
+      <div class="video-background">
+        <!-- Video will be added by user -->
+        <video autoplay muted loop id="hero-video" poster="">
+          <source src="assets/13411552_2560_1440_25fps.mp4" type="video/mp4" />
+          <source src="" type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>Big ideas need the <b>right space.</b></h1>
+          <p>
+            EZZE Concept connects entrepreneurs with modern rental homes across
+            Azerbaijan, offering premium properties with exceptional service.
+          </p>
+
+          <!-- Enhanced Search Form -->
+          <div class="search-form-container">
+            <form class="search-form">
+              <div class="search-form-row">
+                <div class="form-group">
+                  <label for="city">City</label>
+                  <select id="city">
+                    <option value="" selected disabled>Select</option>
+                    <option value="baku">Baku</option>
+                    <option value="ganja">Ganja</option>
+                    <option value="sumgait">Sumgait</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="district">District</label>
+                  <select id="district">
+                    <option value="" selected disabled>Select</option>
+                    <option value="nasimi">Nasimi</option>
+                    <option value="sabail">Sabail</option>
+                    <option value="yasamal">Yasamal</option>
+                  </select>
+                </div>
+              </div>
+              <div class="search-form-row">
+                <div class="form-group">
+                  <label for="property-type">Property type</label>
+                  <select id="property-type">
+                    <option value="" selected disabled>Select</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="house">House</option>
+                    <option value="villa">Villa</option>
+                    <option value="office">Office</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="rooms">Rooms</label>
+                  <select id="rooms">
+                    <option value="" selected disabled>Select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4+</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="min-price">Min. price in ₼</label>
+                  <input type="number" id="min-price" placeholder="Min price" />
+                </div>
+                <div class="form-group">
+                  <label for="max-price">Max. price in ₼</label>
+                  <input type="number" id="max-price" placeholder="Max price" />
+                </div>
+              </div>
+              <div class="search-button-container">
+                <button type="submit" class="search-button">Search</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Properties Section -->
+    <section id="properties" class="featured-properties">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Properties</h2>
+          <p>Discover our selection of premium properties</p>
+        </div>
+        <div class="properties-grid">
+          <!-- Property cards will go here -->
+          <div class="property-card">
+            <div class="property-image">
+              <img src="assets/home1.jpg" alt="Property 1" />
+              <div class="property-tag">For Rent</div>
+            </div>
+            <div class="property-content">
+              <h3>Luxury Apartment in Baku</h3>
+              <p class="property-location">Nasimi District, Baku</p>
+              <div class="property-features">
+                <span><i class="feature-icon"></i> 3 Bedrooms</span>
+                <span><i class="feature-icon"></i> 2 Bathrooms</span>
+                <span><i class="feature-icon"></i> 120 m²</span>
+              </div>
+              <div class="property-price">1,200 ₼ / month</div>
+            </div>
+          </div>
+          <div class="property-card">
+            <div class="property-image">
+              <img src="assets/home2.jpg" alt="Property 2" />
+              <div class="property-tag">For Rent</div>
+            </div>
+            <div class="property-content">
+              <h3>Modern Villa with Sea View</h3>
+              <p class="property-location">Sabail District, Baku</p>
+              <div class="property-features">
+                <span><i class="feature-icon"></i> 4 Bedrooms</span>
+                <span><i class="feature-icon"></i> 3 Bathrooms</span>
+                <span><i class="feature-icon"></i> 250 m²</span>
+              </div>
+              <div class="property-price">2,500 ₼ / month</div>
+            </div>
+          </div>
+          <div class="property-card">
+            <div class="property-image">
+              <img src="assets/home3.jpg" alt="Property 3" />
+              <div class="property-tag">For Rent</div>
+            </div>
+            <div class="property-content">
+              <h3>Business Center Office Space</h3>
+              <p class="property-location">Yasamal District, Baku</p>
+              <div class="property-features">
+                <span><i class="feature-icon"></i> Open Space</span>
+                <span><i class="feature-icon"></i> 2 Meeting Rooms</span>
+                <span><i class="feature-icon"></i> 180 m²</span>
+              </div>
+              <div class="property-price">1,800 ₼ / month</div>
+            </div>
+          </div>
+          <div class="property-card">
+            <div class="property-image">
+              <img src="assets/home1.jpg" alt="Property 4" />
+              <div class="property-tag">For Rent</div>
+            </div>
+            <div class="property-content">
+              <h3>Cozy Studio Apartment</h3>
+              <p class="property-location">Yasamal District, Baku</p>
+              <div class="property-features">
+                <span><i class="feature-icon"></i> 1 Bedroom</span>
+                <span><i class="feature-icon"></i> 1 Bathroom</span>
+                <span><i class="feature-icon"></i> 45 m²</span>
+              </div>
+              <div class="property-price">600 ₼ / month</div>
+            </div>
+          </div>
+          <div class="property-card">
+            <div class="property-image">
+              <img src="assets/home2.jpg" alt="Property 5" />
+              <div class="property-tag">For Rent</div>
+            </div>
+            <div class="property-content">
+              <h3>Luxury Penthouse</h3>
+              <p class="property-location">Nasimi District, Baku</p>
+              <div class="property-features">
+                <span><i class="feature-icon"></i> 3 Bedrooms</span>
+                <span><i class="feature-icon"></i> 2 Bathrooms</span>
+                <span><i class="feature-icon"></i> 180 m²</span>
+              </div>
+              <div class="property-price">3,000 ₼ / month</div>
+            </div>
+          </div>
+          <div class="property-card">
+            <div class="property-image">
+              <img src="assets/home3.jpg" alt="Property 6" />
+              <div class="property-tag">For Rent</div>
+            </div>
+            <div class="property-content">
+              <h3>Modern Office Space</h3>
+              <p class="property-location">Sabail District, Baku</p>
+              <div class="property-features">
+                <span><i class="feature-icon"></i> Open Plan</span>
+                <span><i class="feature-icon"></i> 3 Meeting Rooms</span>
+                <span><i class="feature-icon"></i> 200 m²</span>
+              </div>
+              <div class="property-price">2,800 ₼ / month</div>
+            </div>
+          </div>
+        </div>
+        <div class="view-all-container">
+          <a href="properties.html" class="view-all-btn">View All Properties</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Services</h2>
+          <p>Comprehensive real estate services for entrepreneurs</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="assets/property-management.webp" alt="Property Management" />
+            </div>
+            <h3>Property Management</h3>
+            <p>
+              Professional management of your property investments with regular
+              reporting and maintenance.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="assets/rental-services.webp" alt="Rental Services" />
+            </div>
+            <h3>Rental Services</h3>
+            <p>
+              Find the perfect rental property for your business or personal
+              needs with our expert guidance.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="assets/investment-advisory.jpg" alt="Investment Advisory" />
+            </div>
+            <h3>Investment Advisory</h3>
+            <p>
+              Strategic advice on real estate investments to maximize returns
+              and minimize risks.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="assets/legal-support.jpg" alt="Legal Support" />
+            </div>
+            <h3>Legal Support</h3>
+            <p>
+              Comprehensive legal assistance for all property transactions and
+              contract negotiations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <div class="section-header text-left">
+              <h2>About EZZE Concept</h2>
+              <p>Connecting entrepreneurs with modern living spaces</p>
+            </div>
+            <p>
+              EZZE Concept is Azerbaijan's premier real estate platform
+              specializing in connecting entrepreneurs and business
+              professionals with modern, high-quality rental properties. We
+              understand the unique needs of business-minded individuals and
+              provide tailored solutions for both short and long-term
+              accommodations.
+            </p>
+            <p>
+              Founded with a vision to simplify the property search process, we
+              offer a curated selection of premium properties in the most
+              desirable locations across Azerbaijan. Our team of experienced
+              real estate professionals is dedicated to providing exceptional
+              service and support throughout your property journey.
+            </p>
+            <div class="about-stats">
+              <div class="stat-item">
+                <span class="stat-number" data-count="500">0</span>
+                <span class="stat-text">Properties</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-count="1000">0</span>
+                <span class="stat-text">Happy Clients</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-count="10">0</span>
+                <span class="stat-text">Years Experience</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <img src="assets/crescent.jpg" alt="About EZZE Concept" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>What Our Clients Say</h2>
+          <p>
+            Hear from entrepreneurs who found their perfect space with EZZE
+            Concept
+          </p>
+        </div>
+        <div class="testimonials-slider">
+          <div class="testimonial-item">
+            <div class="testimonial-content">
+              <p class="testimonial-text">
+                "EZZE Concept helped me find the perfect apartment that serves
+                as both my home and remote office. The property exceeded my
+                expectations and the team was incredibly helpful throughout the
+                entire process."
+              </p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="assets/p1.webp" alt="Client" />
+                </div>
+                <div class="client-details">
+                  <h4>Leyla Mammadova</h4>
+                  <p>Tech Entrepreneur</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-content">
+              <p class="testimonial-text">
+                "As a business traveler who frequently visits Baku, finding
+                quality accommodations used to be challenging. EZZE Concept has
+                simplified this process with their curated selection of premium
+                properties."
+              </p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="assets/p2.jpg" alt="Client" />
+                </div>
+                <div class="client-details">
+                  <h4>Eldar Hasanov</h4>
+                  <p>International Consultant</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-content">
+              <p class="testimonial-text">
+                "The team at EZZE Concept understood exactly what I was looking
+                for in a rental property. They found me a modern villa that
+                perfectly balances luxury living with a functional workspace."
+              </p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="assets/p3.jpg" alt="Client" />
+                </div>
+                <div class="client-details">
+                  <h4>Samira Aliyeva</h4>
+                  <p>Creative Director</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>Get in touch with our team of real estate experts</p>
+        </div>
+        
+        <div class="contact-wrapper">
+          <!-- Contact Information Cards -->
+          <div class="contact-cards">
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <i class="fi fi-sr-marker"></i>
+              </div>
+              <div class="contact-card-content">
+                <h3>Our Office</h3>
+                <p>123 Business Center, Nizami Street<br>Baku, Azerbaijan</p>
+              </div>
+            </div>
+            
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <i class="fi fi-sr-phone-call"></i>
+              </div>
+              <div class="contact-card-content">
+                <h3>Phone</h3>
+                <p>+994 12 345 6789</p>
+                <p>+994 50 123 4567</p>
+              </div>
+            </div>
+            
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <i class="fi fi-sr-envelope"></i>
+              </div>
+              <div class="contact-card-content">
+                <h3>Email</h3>
+                <p>info@ezzeconcept.az</p>
+                <p>support@ezzeconcept.az</p>
+              </div>
+            </div>
+            
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <i class="fi fi-sr-time-check"></i>
+              </div>
+              <div class="contact-card-content">
+                <h3>Working Hours</h3>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <p>Saturday: 10:00 AM - 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contact Form -->
+          <div class="contact-form-wrapper">
+            <div class="contact-form-header">
+              <h3>Send us a Message</h3>
+              <p>We'll get back to you as soon as possible</p>
+            </div>
+            <form class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" placeholder="Your name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" placeholder="Your email" required />
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" placeholder="Your phone number" />
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input type="text" id="subject" placeholder="Subject" required />
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" placeholder="Your message" required></textarea>
+              </div>
+              
+              <button type="submit" class="submit-button">
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-info">
+              <div class="footer-logo">
+                <a href="index.html" class="logo-link">
+                  <img
+                    src="assets/logos/1(1)(1).png"
+                    alt="EZZE Concept Logo"
+                    class="footer-logo-img"
+                  />
+                </a>
+              </div>
+              <p class="footer-description">
+                EZZE Concept offers premium real estate solutions in Azerbaijan, 
+                providing exceptional properties for rent with unmatched service 
+                and attention to detail.
+              </p>
+              <div class="footer-social">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+            
+            <div class="footer-links">
+              <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="properties.html">Properties</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="about.html">About Us</a></li>
+                  <li><a href="#testimonials">Testimonials</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul class="footer-contact">
+                  <li>123 Business Center, Nizami Street<br>Baku, Azerbaijan</li>
+                  <li>+994 12 345 6789</li>
+                  <li>info@ezzeconcept.az</li>
+                  <li>Mon-Fri: 9AM-6PM</li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <h3>Legal</h3>
+                <div class="footer-legal">
+                  <a href="#">Terms & Conditions</a>
+                  <a href="#">Privacy Policy</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2025 EZZE Concept. All rights reserved. Designed with <i class="fi fi-sr-heart"></i> in Azerbaijan</p>
+        </div>
+      </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/back-to-top.js"></script>
+  </body>
+</html>

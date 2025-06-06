@@ -1,0 +1,42 @@
+/* Properties Page Specific Styles */
+
+/* Fix for search button alignment in properties page */
+.properties-search-form .search-form-row:last-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    align-items: flex-end;
+}
+
+.properties-search-form .search-button-container {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.properties-search-form .search-button {
+    width: 100%;
+    margin-top: 0;
+    height: 48px; /* Match the height of the input fields */
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .properties-search-form .search-form-row:last-child {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .properties-search-form .search-button-container {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .properties-search-form .search-form-row:last-child {
+        grid-template-columns: 1fr;
+    }
+    
+    .properties-search-form .search-button-container {
+        grid-column: span 1;
+    }
+}
