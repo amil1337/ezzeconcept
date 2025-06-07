@@ -34,16 +34,16 @@
   </head>
   <body>
     <!-- Header Section -->
-    <header class="header">
+    <header class="header home-header">
       <div class="container">
         <div class="header-content">
           <div class="logo">
             <a href="index.html" class="logo-link">
-              <img
-                src="assets/logos/1(1)(1).png"
-                alt="EZZE Concept Logo"
-                class="logo-img"
-              />
+              <div class="text-logo">
+                <span class="logo-line">Azerbaijan</span>
+                <span class="logo-line">Real Estate</span>
+                <span class="logo-line">Investment</span>
+              </div>
             </a>
           </div>
           <nav class="main-nav">
@@ -93,73 +93,80 @@
       <div class="hero-overlay"></div>
       <div class="container">
         <div class="hero-content">
-          <h1>Big ideas need the <b>right space.</b></h1>
+          <h1>Big ideas need the right space.</h1>
           <p>
             EZZE Concept connects entrepreneurs with modern rental homes across
             Azerbaijan, offering premium properties with exceptional service.
           </p>
-
-          <!-- Enhanced Search Form -->
-          <div class="search-form-container">
-            <form class="search-form">
-              <div class="search-form-row">
-                <div class="form-group">
-                  <label for="city">City</label>
-                  <select id="city">
-                    <option value="" selected disabled>Select</option>
-                    <option value="baku">Baku</option>
-                    <option value="ganja">Ganja</option>
-                    <option value="sumgait">Sumgait</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="district">District</label>
-                  <select id="district">
-                    <option value="" selected disabled>Select</option>
-                    <option value="nasimi">Nasimi</option>
-                    <option value="sabail">Sabail</option>
-                    <option value="yasamal">Yasamal</option>
-                  </select>
-                </div>
-              </div>
-              <div class="search-form-row">
-                <div class="form-group">
-                  <label for="property-type">Property type</label>
-                  <select id="property-type">
-                    <option value="" selected disabled>Select</option>
-                    <option value="apartment">Apartment</option>
-                    <option value="house">House</option>
-                    <option value="villa">Villa</option>
-                    <option value="office">Office</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="rooms">Rooms</label>
-                  <select id="rooms">
-                    <option value="" selected disabled>Select</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4+</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="min-price">Min. price in ₼</label>
-                  <input type="number" id="min-price" placeholder="Min price" />
-                </div>
-                <div class="form-group">
-                  <label for="max-price">Max. price in ₼</label>
-                  <input type="number" id="max-price" placeholder="Max price" />
-                </div>
-              </div>
-              <div class="search-button-container">
-                <button type="submit" class="search-button">Search</button>
-              </div>
-            </form>
+          <!-- From Uiverse.io by mrhyddenn --> 
+          <div class="scrolldown" style="--color: crimson">
+            <div class="chevrons">
+                <div class="chevrondown"></div>
+                <div class="chevrondown"></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Enhanced Search Form -->
+    <div class="search-form-container">
+      <form class="search-form">
+        <div class="search-form-row">
+          <div class="form-group">
+            <label for="city">City</label>
+            <select id="city">
+              <option value="" selected disabled>Select</option>
+              <option value="baku">Baku</option>
+              <option value="ganja">Ganja</option>
+              <option value="sumgait">Sumgait</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="district">District</label>
+            <select id="district">
+              <option value="" selected disabled>Select</option>
+              <option value="nasimi">Nasimi</option>
+              <option value="sabail">Sabail</option>
+              <option value="yasamal">Yasamal</option>
+            </select>
+          </div>
+        </div>
+        <div class="search-form-row">
+          <div class="form-group">
+            <label for="property-type">Property type</label>
+            <select id="property-type">
+              <option value="" selected disabled>Select</option>
+              <option value="apartment">Apartment</option>
+              <option value="house">House</option>
+              <option value="villa">Villa</option>
+              <option value="office">Office</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="rooms">Rooms</label>
+            <select id="rooms">
+              <option value="" selected disabled>Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="min-price">Min. price in ₼</label>
+            <input type="number" id="min-price" placeholder="Min price" />
+          </div>
+          <div class="form-group">
+            <label for="max-price">Max. price in ₼</label>
+            <input type="number" id="max-price" placeholder="Max price" />
+          </div>
+        </div>
+        <div class="search-button-container">
+          <button type="submit" class="search-button">Search</button>
+        </div>
+      </form>
+    </div>
 
     <!-- Featured Properties Section -->
     <section id="properties" class="featured-properties">

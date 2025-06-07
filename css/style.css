@@ -17,6 +17,22 @@ body {
     background-color: #fff;
 }
 
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Overlay for mobile menu */
+body.menu-open:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -31,7 +47,7 @@ a {
 }
 
 a:hover {
-    color: #d4a223;
+    color: #b30000;
 }
 
 /* Header Styles */
@@ -44,6 +60,43 @@ a:hover {
     background-color: #fff;
     transition: all 0.3s ease;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.home-header:not(.scrolled) .mobile-menu-toggle span {
+    background-color: #fff;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
 }
 
 /* Special styles for index.html header */
@@ -72,16 +125,44 @@ a:hover {
     font-weight: 700;
 }
 
-.logo-img {
-    height: 60px;
+/* Text-based logo styles */
+.text-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
     margin-right: 15px;
 }
 
-.logo-text {
-    font-size: 32px;
+.logo-line {
+    display: block;
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
-    margin-left: 10px;
-    font-family: 'SF Pro Display', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.logo-line:nth-child(1) {
+    font-size: 18px;
+}
+
+.logo-line:nth-child(2) {
+    font-size: 20px;
+}
+
+.logo-line:nth-child(3) {
+    font-size: 16px;
+}
+
+/* All logo lines are always white on transparent header */
+
+/* No special styling for middle line */
+
+.home-header.scrolled .logo-line {
+    color: #333;
+    text-shadow: none;
 }
 
 .main-nav ul {
@@ -127,13 +208,13 @@ a:hover {
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: #d4a223;
+    background-color: #b30000;
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
 
 .main-nav a:hover {
-    color: #d4a223;
+    color: #b30000;
 }
 
 .main-nav a:hover:after {
@@ -165,7 +246,7 @@ a:hover {
 .search-icon a:hover {
     background-color: #e6e6e6;
     transform: scale(1.1);
-    color: #d4a223;
+    color: #b30000;
 }
 
 /* Hero Section Styles */
@@ -226,6 +307,14 @@ a:hover {
     letter-spacing: -1px;
 }
 
+.hero-content .highlighted-text {
+    background-color: rgba(179, 0, 0, 0.85);
+    padding: 2px;
+    color: #fff;
+    display: inline-block;
+    box-shadow: 0 2px 10px rgba(179, 0, 0, 0.3);
+}
+
 .hero-content p {
     font-size: 1.1rem;
     margin-bottom: 40px;
@@ -237,16 +326,20 @@ a:hover {
 
 /* Enhanced Search Form Styles */
 .search-form-container {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(240, 240, 245, 0.8));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(255, 230, 230, 0.8));
+    backdrop-filter: blur(120px);
+    -webkit-backdrop-filter: blur(120px);
     border-radius: 16px;
     padding: 30px 35px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
-    margin-top: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    position: relative;
+    position: absolute;
     overflow: hidden;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 1000px;
+    z-index: 10;
 }
 
 .search-form-container::before {
@@ -318,9 +411,9 @@ a:hover {
 
 .form-group input:focus,
 .form-group select:focus {
-    border-color: #d4a223;
+    border-color: #b30000;
     outline: none;
-    box-shadow: 0 0 0 2px rgba(245, 207, 108, 0.2);
+    box-shadow: 0 0 0 2px rgba(255, 85, 85, 0.2);
     background-color: rgba(255, 255, 255, 0.85);
 }
 
@@ -337,11 +430,11 @@ a:hover {
 }
 
 .hero-content b {
-    color: #fdc947;
+    color: #ff3333;
 }
 
 .search-button {
-    background: linear-gradient(135deg, #f5cf6c, #e8b22b);
+    background: linear-gradient(135deg, #ff5555, #cc0000);
     color: #fff;
     border: none;
     padding: 12px 24px;
@@ -354,19 +447,20 @@ a:hover {
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(232, 178, 43, 0.3);
+    box-shadow: 0 4px 10px rgba(204, 0, 0, 0.3);
     letter-spacing: 1px;
 }
 
 .search-button:hover {
     border-radius: 8px;
-    background: linear-gradient(135deg, #e8b22b, #d4a223);
+    background: linear-gradient(135deg, #cc0000, #b30000);
     transform: translateY(-2px);
 }
 
 /* Featured Properties Section */
 .featured-properties {
-    padding: 80px 0;
+    padding-top: 200px;
+    padding-bottom: 80px;
     background-color: #f8f9fa;
 }
 
@@ -408,7 +502,7 @@ a:hover {
 .view-all-btn {
     display: inline-block;
     padding: 12px 24px;
-    background: linear-gradient(135deg, #f5cf6c, #e8b22b);
+    background: linear-gradient(135deg, #ff5555, #cc0000);
     color: #fff;
     border-radius: 36px;
     font-weight: 600;
@@ -416,7 +510,7 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(232, 178, 43, 0.3);
+    box-shadow: 0 4px 10px rgba(204, 0, 0, 0.3);
     font-family: 'SF Pro Display', sans-serif;
     position: relative;
     overflow: hidden;
@@ -424,9 +518,9 @@ a:hover {
 
 .view-all-btn:hover {
     border-radius: 8px;
-    background: linear-gradient(135deg, #e8b22b, #d4a223);
+    background: linear-gradient(135deg, #cc0000, #b30000);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(232, 178, 43, 0.4);
+    box-shadow: 0 6px 15px rgba(204, 0, 0, 0.4);
     color: #fff;
 }
 
@@ -469,7 +563,7 @@ a:hover {
     position: absolute;
     top: 15px;
     right: 15px;
-    background-color: #d4a223;
+    background-color: #b30000;
     color: #fff;
     padding: 5px 10px;
     border-radius: 4px;
@@ -514,13 +608,13 @@ a:hover {
 
 .feature-icon {
     margin-right: 5px;
-    color: #d4a223;
+    color: #b30000;
 }
 
 .property-price {
     font-size: 18px;
     font-weight: 700;
-    color: #d4a223;
+    color: #b30000;
     margin-top: 20px;
     padding-top: 15px;
     border-top: 1px solid #eee;
@@ -627,7 +721,7 @@ a:hover {
     display: block;
     font-size: 36px;
     font-weight: 700;
-    color: #d4a223;
+    color: #b30000;
     margin-bottom: 5px;
 }
 
@@ -791,7 +885,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right bottom, #f5cf6c, #d4a223);
+    background: linear-gradient(to right bottom, #ff5555, #b30000);
     border-radius: 50%;
     color: #fff;
 }
@@ -856,7 +950,7 @@ a:hover {
 .contact-card-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(to bottom right, #f5cf6c, #d4a223);
+    background: linear-gradient(to bottom right, #ff5555, #b30000);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -916,7 +1010,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right bottom, #f5cf6c, #d4a223);
+    background: linear-gradient(to right bottom, #ff5555, #b30000);
     border-radius: 50%;
     color: #fff;
 }
@@ -951,7 +1045,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(to right, #f5cf6c, #d4a223);
+    background: linear-gradient(to right, #ff5555, #b30000);
 }
 
 .contact-form-header {
@@ -1005,9 +1099,9 @@ a:hover {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #d4a223;
+    border-color: #b30000;
     outline: none;
-    box-shadow: 0 0 0 3px rgba(245, 207, 108, 0.15);
+    box-shadow: 0 0 0 3px rgba(255, 85, 85, 0.15);
     background-color: #fff;
 }
 
@@ -1017,7 +1111,7 @@ a:hover {
 }
 
 .submit-button {
-    background: linear-gradient(135deg, #f5cf6c, #d4a223);
+    background: linear-gradient(135deg, #ff5555, #b30000);
     color: #fff;
     border: none;
     padding: 16px 30px;
@@ -1044,36 +1138,106 @@ a:hover {
 }
 
 .submit-button:hover {
-    background: linear-gradient(135deg, #d4a223, #c89516);
+    background: linear-gradient(135deg, #b30000, #990000);
     transform: translateY(-2px);
-    box-shadow: 0 12px 25px rgba(212, 162, 35, 0.3);
+    box-shadow: 0 12px 25px rgba(179, 0, 0, 0.3);
 }
 
 .submit-button:hover i {
     transform: translateX(4px);
 }
 
-/* Responsive Styling */
-@media (max-width: 992px) {
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-cards {
-        max-width: 600px;
-        margin: 0 auto;
-    }
+/* Scroll Down Animation */
+/* From Uiverse.io by mrhyddenn */ 
+.scrolldown {
+  --color: rgb(255, 0, 0);
+  --sizeX: 25px;
+  --sizeY: 40px;
+  position: relative;
+  width: var(--sizeX);
+  height: var(--sizeY);
+  margin: 15px auto 0;
+  border: calc(var(--sizeX) / 10) solid var(--color);
+  border-radius: 50px;
+  box-sizing: border-box;
+  display: inline-block;
 }
 
-@media (max-width: 768px) {
-    .contact-cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-form .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
+.scrolldown::before {
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  background-color: var(--color);
+  border-radius: 100%;
+  animation: scrolldown-anim 2s infinite;
+  box-sizing: border-box;
+  box-shadow: 0px -5px 3px 1px #a3111166;
+}
+
+@keyframes scrolldown-anim {
+  0% {
+    opacity: 0;
+    height: 6px;
+  }
+
+  40% {
+    opacity: 1;
+    height: 10px;
+  }
+
+  80% {
+    transform: translate(0, 20px);
+    height: 10px;
+    opacity: 0;
+  }
+
+  100% {
+    height: 3px;
+    opacity: 0;
+  }
+}
+
+.chevrons {
+  padding: 6px 0 0 0;
+  margin-left: -3px;
+  margin-top: 48px;
+  width: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chevrondown {
+  margin-top: -6px;
+  position: relative;
+  border: solid var(--color);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+}
+
+.chevrondown:nth-child(odd) {
+  animation: pulse54012 500ms ease infinite alternate;
+}
+
+.chevrondown:nth-child(even) {
+  animation: pulse54012 500ms ease infinite alternate 250ms;
+}
+
+@keyframes pulse54012 {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.5;
+  }
 }
 
 /* About Page Styles */
@@ -1096,8 +1260,13 @@ a:hover {
 
 .about-hero-content p {
     font-size: 18px;
-    max-width: 700px;
-    margin: 0 auto;
+    color: #fff;
+    max-width: 600px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .our-story-section {
@@ -1168,7 +1337,7 @@ a:hover {
 
 .icon-container i {
     font-size: 36px;
-    color: #d4a223;
+    color: #b30000;
 }
 
 .vision-box h3, .mission-box h3 {
@@ -1244,7 +1413,7 @@ a:hover {
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #d4a223;
+    color: #b30000;
 }
 
 .stat-label {
@@ -1298,7 +1467,7 @@ a:hover {
 }
 
 .position {
-    color: #d4a223;
+    color: #b30000;
     margin-bottom: 15px;
     font-style: italic;
 }
@@ -1323,7 +1492,7 @@ a:hover {
 }
 
 .social-links a:hover {
-    background-color: #d4a223;
+    background-color: #b30000;
     color: #fff;
 }
 
@@ -1397,7 +1566,7 @@ a:hover {
 }
 
 .social-link:hover {
-    background-color: #d4a223;
+    background-color: #b30000;
     transform: translateY(-3px);
     color: #fff;
 }
@@ -1431,7 +1600,7 @@ a:hover {
     bottom: 0;
     width: 40px;
     height: 2px;
-    background-color: #d4a223;
+    background-color: #b30000;
 }
 
 .footer-column ul {
@@ -1459,7 +1628,7 @@ a:hover {
 }
 
 .footer-column ul li a:hover {
-    color: #d4a223;
+    color: #b30000;
     transform: translateX(5px);
 }
 
